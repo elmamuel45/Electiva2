@@ -17,7 +17,7 @@ jobs:
       run: |
         # Configurar Surge.sh
         npm install --global surge
-        surge token f2bd79ed8e5e4e09e95b7f96b0f591de
+        surge token manueljesusmedinacepeda@gmail.com
 
         # Desplegar en Surge.sh
         surge --project ./ --domain estudiante1234M.surge.sh
