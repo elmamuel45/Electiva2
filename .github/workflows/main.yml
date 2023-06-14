@@ -1,16 +1,30 @@
-name: Deploy Website
+name: Deploy to Surge
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    name: Deploying to surge
-    
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: 16
-      - run: npm install -g surge
-      - run: surge ./ estudiante1234M.surge.sh --token ${{ secrets.SURGEKEY }}
+          node-version: '14'
+
+      - name: Install Surge CLI
+        run: npm install --global surge
+
+      - name: Build and Deploy
+        run: |
+          # Configurar Surge.sh
+          surge token ${{f2bd79ed8e5e4e09e95b7f96b0f591de}}
+
+          # Desplegar en Surge.sh
+          surge --project ./ --domain estudianteM1234.surge.sh
