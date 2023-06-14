@@ -13,4 +13,4 @@ jobs:
         with:
           node-version: 16
       - run: npm install -g surge
-      - run: surge ./ student-M.surge.sh --token ${{ secrets.SURGEKEY }}
+      - run: surge ./ student-M.surge.sh --token ${{f2bd79ed8e5e4e09e95b7f96b0f591de}}
