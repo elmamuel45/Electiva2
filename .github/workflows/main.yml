@@ -13,19 +13,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
+    - name: Build and Deploy
+      run: |
+        # Configurar Surge.sh
+        npm install --global surge
+        surge token f2bd79ed8e5e4e09e95b7f96b0f591de
 
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build project
-      run: npm run build
-
-    - name: Configure Surge.sh
-      run: npm install --global surge
-
-    - name: Deploy to Surge.sh
-      run: surge --project ./dist --domain estudiante1234M.surge.sh
+        # Desplegar en Surge.sh
+        surge --project ./ --domain estudiante1234M.surge.sh
