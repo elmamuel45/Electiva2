@@ -18,4 +18,4 @@ jobs:
 
     - name: Build and Deploy
       run: |
-        surge --project ./ --domain estudiante-m-n.surge.sh
+        surge --project ./ --domain estudiante-m-n-s.surge.sh
