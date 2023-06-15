@@ -15,12 +15,12 @@ jobs:
 
     - name: Build and Deploy
       env:
-        SURGE_EMAIL: tu_email
-        SURGE_PASSWORD: tu_contraseña
+        SURGE_EMAIL: manueljesusmedinacepeda@gmail.com  
+        SURGE_PASSWORD: Manuel2134
       run: |
         # Configurar Surge.sh
         npm install --global surge
-        surge login --email $manueljesusmedinacepeda@gmail.com --password $Manuel2134
+        surge login --email $SURGE_EMAIL --password $SURGE_PASSWORD
 
         # Desplegar en Surge.sh
         surge --project ./ --domain estudiante1234M.surge.sh
