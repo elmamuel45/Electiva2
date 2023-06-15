@@ -1,0 +1,23 @@
+name: Deploy to Surge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install Surge.sh
+      run: npm install --global surge
+
+    - name: Login to Surge.sh
+      run: surge login -p manueljesusmedinacepeda@gmail.com -p Manuel2134
+
+    - name: Build and Deploy
+      run: surge --project ./ --domain large-crib.surge.sh
