@@ -8,4 +8,23 @@ body {
     color: #333;
     margin-top: 100px;
   }
+
+  img{
+    height: 380px;
+    width: 420px;
+  }
+
+  font{
+    color: #5f0303 ;
+    size: 50px;
+    font-family: Arial, sans-serif;
+  }
+
+  header{
+    background: rgba(233, 7, 7, 0.7);
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+  }
   
+
