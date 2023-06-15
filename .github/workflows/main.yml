@@ -1,20 +1,18 @@
 name: Continuous Deployment
-on: [push]
-
+on:
+  push:
+    branches:
+      - main
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3.2.0
-            
-            - run: echo "Setting up NodeJs"
-            - name: Setup NodeJs
-              uses: actions/setup-node@v1
-              with:
-               node-version: 16.x
+  deploy:
+    runs-on: ubuntu-latest
 
-            - run: npm install -g surge
-            - run: echo "Deploying website"
-            - run: surge ./ parcialdevops.surge.sh --token ${{ c5542a766e9ace8ed12c68e03af2e968 }}
-          
-            - run: echo "Please visit => student21N.surge.sh"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Surge
+        run: npm install -g surge
+
+      - name: Deploy surge 
+        run: surge --token ${{ secrets.SURGE_TOKEN }} --project ./ --domain student-web-gg.surge.sh
