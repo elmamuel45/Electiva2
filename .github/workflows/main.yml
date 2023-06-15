@@ -15,6 +15,6 @@ jobs:
 
             - run: npm install -g surge
             - run: echo "Deploying website"
-            - run: surge ./ parcialdevops.surge.sh --token ${{ secrets.SURGE_KEY }}
+            - run: surge ./ parcialdevops.surge.sh --token  c5542a766e9ace8ed12c68e03af2e968
           
             - run: echo "Please visit => student21N.surge.sh"
