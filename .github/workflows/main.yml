@@ -1,18 +1,22 @@
-name: Continuous Deployment
+name: Deploy to Surge
+
 on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Install Surge
-        run: npm install -g surge
+    - name: Build and Deploy
+      run: |
+        # Instalar Surge.sh
+        npm install --global surge
 
-      - name: Deploy surge 
-        run: surge --token ${{ secrets.SURGE_TOKEN }} --project ./ --domain student-web-gg.surge.sh
+        # Desplegar en Surge.sh
+        surge --project ./ --domain estudiante1m2.surge.sh
