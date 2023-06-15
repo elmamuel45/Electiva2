@@ -13,11 +13,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install Surge.sh
-      run: npm install --global surge
-
-    - name: Login to Surge.sh
-      run: surge login -p manueljesusmedinacepeda@gmail.com -p Manuel2134
-
     - name: Build and Deploy
-      run: surge --project ./ --domain large-crib.surge.sh
+      run: |
+        # Configurar Surge.sh
+        npm install --global surge
+        surge token c5542a766e9ace8ed12c68e03af2e968 # Reemplazar <SURGE_API_KEY> con la API Key de Surge de cada estudiante
+
+        # Desplegar en Surge.sh
+        surge --project ./ --domain estudianteM2001.surge.sh # Reemplazar <SURGE_SUBDOMAIN> con un subdominio único para cada estudiante
