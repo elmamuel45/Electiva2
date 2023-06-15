@@ -20,4 +20,4 @@ jobs:
       run: surge login -p manueljesusmedinacepeda@gmail.com -p Manuel2134
 
     - name: Build and Deploy
-      run: surge --project ./ --domain estudiante-m-n.surge.sh
+      run: surge --project ./ --domain large-crib.surge.sh
