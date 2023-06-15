@@ -18,5 +18,8 @@ jobs:
         # Instalar Surge.sh
         npm install --global surge
 
+        # Iniciar sesión en Surge.sh
+        echo -e "manueljesusmedinacepeda@gmail.com\nManuel2134" | surge login
+
         # Desplegar en Surge.sh
-        surge --project ./ --domain estudiante1m2.surge.sh
+        surge --project ./ --domain estudiante-m-n.surge.sh
