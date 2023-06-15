@@ -14,10 +14,13 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build and Deploy
+      env:
+        SURGE_EMAIL: tu_email
+        SURGE_PASSWORD: tu_contraseña
       run: |
         # Configurar Surge.sh
         npm install --global surge
-        surge token f2bd79ed8e5e4e09e95b7f96b0f591de
+        surge login --email $manueljesusmedinacepeda@gmail.com --password $Manuel2134
 
         # Desplegar en Surge.sh
         surge --project ./ --domain estudiante1234M.surge.sh
