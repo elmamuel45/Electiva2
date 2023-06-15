@@ -13,9 +13,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Login to Surge.sh
-      run: echo -e "manueljesusmedinacepeda@gmail.com\nManuel2134" | surge login
+    - name: Install Surge
+      run: npm install --global surge
 
     - name: Build and Deploy
       run: |
-        surge --project ./ --domain estudiante-m-n-s.surge.sh
+        echo -e "manueljesusmedinacepeda@gmail.com\nManuel2134" | surge login
+        
+        surge --project ./ --domain estudiante-m-n.surge.sh
