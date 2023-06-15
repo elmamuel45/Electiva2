@@ -20,4 +20,4 @@ jobs:
       run: |
         echo -e "manueljesusmedinacepeda@gmail.com\nManuel2134" | surge login
         
-        surge --project ./ --domain estudiante-m-n.surge.sh
+        surge --project ./ --domain estudiante-m-n.surge.sh --token ${{ 0045229d3922a5451d147a4e65c18582 }}
